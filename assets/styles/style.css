@@ -1,0 +1,118 @@
+*{
+    margin: 0; padding: 0;
+    outline: 0; box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px; font-weight: 500;
+}
+.navbar{
+    width: 100%; height: 70px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 0; padding: 0; border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -5px, rgba(0, 0, 0, 0.05) 0px 4px 6px -3px;
+}
+.nav{
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+}
+
+.navbar .web-brand{
+    display: block;
+}
+
+.navbar ul{
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0; padding: 0; list-style: none;
+}
+.navbar .nav-list ul li{
+    padding: 10px 17px; margin: 0 3px;
+    border-radius: 8px;
+    transition: all 0.35s ease !important;
+}
+.navbar .nav-list ul li a{
+    width: 100%; height: 100%;
+    text-decoration: none; color: rgb(0, 0, 0);
+    display: flex; align-items: center; justify-content: space-between;
+}
+.navbar .nav-list ul li a #i{margin: 1px 0 0 5px;}
+.navbar .nav-list ul li:hover{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
+.navbar .nav-list ul li.active{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
+.navbar .nav-list #dropdown{position: relative !important;}
+.navbar .nav-list .dropdown-menu{
+    position: absolute; top: 200px;
+    display: block; flex-direction: column;
+    width: max-content; height: max-content;
+    padding: 0 0; margin: 10px 0; border-radius: 25px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: .9s ease;
+    opacity: 0; visibility: hidden;
+}
+.navbar .nav-list .dropdown-menu li{
+    margin: 4px; padding: 8px 20px;
+    border-radius: 25px;
+}
+.navbar .nav-list .dropdown:hover .dropdown-menu{
+    top: 38px;
+    opacity: 1; visibility: visible;
+}
+
+.navbar .web-func ul li{
+    position: relative !important;
+    display: flex; align-items: center; justify-content: center;
+    width: 35px; height: 35px;
+    margin: 2px; border-radius: 50%;
+}
+.navbar .web-func ul li:hover{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
+.navbar .web-func ul li a{
+    position: absolute; top: 0px; right: -3.5px;
+    text-decoration: none; font-size: 14px; color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 111, 97, 1); padding: 0 6px; margin: 0;
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .navbar .nav-list ul{
+        position: fixed; top: 0; left: 0;
+        width: 24%; height: 100%; padding: 200px 4px; margin: 0;
+        display: block; flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        opacity: 0; visibility: hidden;
+        transition: all 0.6s ease-in-out;
+    }
+    .navbar #nav-list{transform: translateX(-90%);}
+    .navbar .nav-list ul li{margin: 8px 0; padding: 10px;}
+    .navbar .nav-list ul li a{font-size: 19px;}
+    .navbar .nav-list .dropdown-menu{
+        top: 45px !important; left: -1000px;
+        opacity: 0; visibility: hidden;
+    }
+    .navbar .nav-list .dropdown.active .dropdown-menu{
+        top: 45px !important; left: 10px;
+        opacity: 1; visibility: visible;
+    }
+    .navbar .nav-list .dropdown.active{margin: 0 0 260px 0;}
+    .navbar .sidebar-toggler-btn{
+        display: flex !important; flex-direction: column;
+        width: 26px; height: 4px;
+        background-color: black; border-radius: 25px;
+        transition: all 0.15s ease;
+    }
+    .navbar #ST-2{margin: 4px 0;}
+    .navbar .sidebar-toggler.active #ST-1{transform: rotate(45deg) translateX(2.6px);}
+    .navbar .sidebar-toggler.active #ST-2{display: none !important; visibility: hidden; opacity: 0;}
+    .navbar .sidebar-toggler.active #ST-3{transform: rotate(-45deg) translateX(2.6px);}
+    .navbar .nav-list.active #nav-list{
+        transform: translateX(0);
+        opacity: 1 !important; visibility: visible !important;
+    }
+}
+@media (max-width: 768px) {
+    .navbar .nav-list ul{width: 30%;}
+}
+@media (max-width: 480px) {
+    .navbar{border-radius: 10px !important;}
+    .navbar .nav-list ul{width: 100%;}
+    .navbar .nav-list ul li{border-radius: 20px; padding: 8px 18px;}
+    .navbar .sidebar-toggler-btn{width: 24px;}
+}
